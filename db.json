@@ -1,0 +1,14 @@
+{
+  "projects": [
+    {
+      "name": "phòng hiệu trưởng ",
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "HTML5 CSS3"
+    }
+  ]
+}

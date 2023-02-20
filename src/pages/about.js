@@ -1,6 +1,15 @@
-
+import { useState, useEffect } from "../lib";
 
 const aboutPage = () => {
+  const [about, setAbout] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/about")
+      .then((respone) => respone.json())
+      .then((data) => {
+        setAbout(data);
+      });
+  }, []);
+
   return /*html*/ `
    <!-- About section -->
    <section id="about" class="section mt-3">
@@ -13,23 +22,24 @@ const aboutPage = () => {
            class="img-thumbnail mb-4"
          />
        </div>
-       <div class="pl-md-4 col-md-9">
-         <h6 class="title">James Smith</h6>
-         <p class="subtitle">UI/UX Designer</p>
-         <p>
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-           Provident, pariatur, aperiam aut autem voluptas odit. Odio ducimus
-           delectus totam sed aliquam sequi praesentium mollitia, illum
-           repudiandae quidem quod, magni magnam.
-         </p>
-         <p>
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim,
-           eius, nam. Quo praesentium qui temporibus voluptatum, facilis
-           aliquid eligendi fugiat beatae neque inventore non. Laborum
-           repellendus consequatur ullam voluptatum asperiores.
-         </p>
-         <button class="btn btn-primary rounded mt-3">DOWNLOAD CV</button>
-       </div>
+    ${about
+      .map((about) => {
+        return `
+        <div class="pl-md-4 col-md-9">
+        <h6 class="title">${about.name}</h6>
+        <p class="subtitle">${about.job}</p>
+        <p>
+          ${about.description}
+        </p>
+        <p>
+        ${about.description}
+        </p>
+        <button class="btn btn-primary rounded mt-3">DOWNLOAD CV</button>
+      </div>
+      `;
+      })
+      .join("")}
+      
      </div>
    </div>
  </section>

@@ -30,14 +30,15 @@ import { render, router } from "./src/lib";
 // import postsPage from "./src/pages/posts";
 // import projectDetail from "./src/pages/project-detail";
 // import projectsPage from "./src/pages/projects";
-import adminProjects from "./src/pages/admin/projects";
+import adminProjects from "./src/pages/admin/projects/projects";
+import categoryAdmin from "./src/pages/admin/categories/categoryAdmin";
 const app = document.querySelector("#app");
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
 // import AdminProjectEditPage from "@/editProjects";
-import ProjectAdd from "./src/pages/admin/addProject";
-import ProjectEdit from "./src/pages/admin/editProject";
-import categoryAdmin from "./src/pages/admin/categoryAdmin";
+import ProjectAdd from "./src/pages/admin/projects/addProject";
+import ProjectEdit from "./src/pages/admin/projects/editProject";
+
 // app.innerHTML = homePage();
 // render(homePage, app);
 // alt + shift + o window
@@ -46,6 +47,7 @@ import categoryAdmin from "./src/pages/admin/categoryAdmin";
 router.on("/", () => {
   render(homePage, app);
 });
+
 // router.on("/about", () => {
 //   render(aboutPage, app);
 // });

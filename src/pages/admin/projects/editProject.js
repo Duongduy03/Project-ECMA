@@ -1,5 +1,5 @@
-import { router, useEffect } from "@/lib";
-import { useState } from "../../lib";
+import { router, useEffect, useState } from "@/lib";
+
 const ProjectEdit = ({ id }) => {
   // const projects = JSON.parse(localStorage.getItem("projects")) || [];
   // const currentProject = projects.find((project) => project.id == id);

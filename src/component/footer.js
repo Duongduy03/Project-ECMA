@@ -10,7 +10,7 @@ const footer = () => {
             document.write(new Date().getFullYear());
           </script>
           &copy;
-          <a href="#" target="_blank">Duong Van Duy</a>
+          <a href="#" >Duong Van Duy</a>
         </p>
       </div>
       <div class="col-sm-6">

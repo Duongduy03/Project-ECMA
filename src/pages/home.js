@@ -7,6 +7,10 @@ import postsPage from "./posts";
 import projectsPage from "./projects";
 
 const homePage = () => {
+  // let toRemove = document.querySelector("#css");
+  // if (toRemove) {
+  //   toRemove.remove();
+  // }
   return /*html*/ `
   ${header()}
   ${Nav()}

@@ -25,7 +25,7 @@ const adminProjects = () => {
         const newProjects = data.filter((project) => project.id != id);
         localStorage.setItem("projects", JSON.stringify(newProjects));
         setData(newProjects);
-        fetch(`http://localhost:3000/projects/${id}`, {
+        fetch(`http://localhost:3000/categories/${id}`, {
           method: "DELETE",
         });
       });
